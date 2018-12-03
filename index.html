@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>DCH Decision Tree</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+</head>
+
+<body>
+    <div id = header>
+            <h1><i class="fas fa-code-branch"></i> Imaging Triage Tree</h1>
+    </div>
+
+    <div id=content>
+        <p class=question>Is this issue related to Medical Imaging?</p>
+            <ul id=lvl1>
+                <li><button class=btn>Yes</button>
+                    <ul><p class=question>Collect Info</p>
+                    <li>
+                        <p class = instruction>Before continuing, please collect the following information:<br>
+                            <input type="checkbox"> MRN<br>
+                            <input type="checkbox"> Patient Name<br>
+                            <input type="checkbox"> Appointment Date & Department<br>
+                            <input type="checkbox"> Order ID <br>
+                            <input type="checkbox"> Accession Number<br>
+                        </p>
+                        <button class=btn>  Information Collected</button>
+                    <ul><p class=question>Issue Type</p>
+                        <li><button class=btn>Cannot Find Order or Appointment</button>
+                            <ul><p class=question>Confirm</p>
+                                <li> 
+                                <p class=instruction>Please confirm the following:
+                                    <br>
+                                    <input type="checkbox"> User logged into correct department<br>
+                                    <input type="checkbox"> User viewing correct worklist<br>
+                                    <input type="checkbox"> User has correct date selected<br>
+                                </p>
+                            <button class=btn>  Confirmed - Issue Still Present</button>
+                                <ul><p class=question>Contact</p>
+                                    <p class=instruction>
+                                        <i class="fas fa-mobile-alt"></i> Please page the Radiant team 
+                                    </p>
+                                </ul>
+                            </li> 
+                        </ul>
+                    </li>
+
+                    <li><button class=btn>vRad Prelim Not Available</button>
+                        <ul><p class=question>Are prelims still being faxed?</p>
+                            <li>
+                                <button class=btn>Yes</button>
+                                    <ul><p class=question>Footprints</p>
+                                        <li><p class=instruction>
+                                                <i class="far fa-sticky-note"></i>Put in a Footprints ticket for PACS
+                                            </p>
+                                        </li>
+                                    </ul>
+                            </li>
+                            <li>
+                                <button class=btn>No</button>
+                                <ul><p class=question>Contact</p>
+                                    <li>
+                                    <p class=instruction>
+                                        <i class="fas fa-mobile-alt"></i> Please page the PACS team 
+                                    </p>
+                                    </li>
+                                </ul>
+                            </li> 
+                        </ul>
+                    </li>
+                    <li><button class=btn>WebPACS Image Link</button>
+                        <ul><p class=question>Can user still access images directly through WebPACS?</p>
+                            <li>
+                                <button class=btn>Yes</button>
+                                    <ul><p class=question>Footprints</p>
+                                        <li><p class=instruction>
+                                                <i class="far fa-sticky-note"></i>Put in a Footprints ticket for PACS and Network teams.
+                                            </p>
+                                        </li>
+                                    </ul>
+                            </li>
+                            <li>
+                                <button class=btn>No</button>
+                                <ul><p class=question>Contact</p>
+                                    <li>
+                                    <p class=instruction>
+                                        <i class="fas fa-mobile-alt"></i> Please page the PACS team 
+                                    </p>
+                                    </li>
+                                </ul>
+                            </li> 
+                        </ul>
+                    </li>
+                    <li><button class=btn>Orders Crossing to PACS/PS</button>
+                        <ul><p class=question>Were all steps successfully completed in the Radiant workflow?</p>
+                                <p class=instruction>Please confirm the following:
+                                    <br>
+                                    <input type="checkbox"> Sucessfully added-on exam<br>
+                                    <input type="checkbox"> Successfully checked-in exam<br>
+                                    <input type="checkbox"> Successfully began/ended exam<br>
+                                </p>
+                            <li>
+                                <button class=btn>Radiant Steps Completed</button>
+                                    <ul><p class=question>Contact</p>
+                                        <li><p class=instruction>
+                                                <i class="fas fa-mobile-alt"></i> Call the Interface team.
+                                            </p>
+                                        </li>
+                                    </ul>
+                            </li>
+                            <li>
+                                <button class=btn>Radiant Steps Not Completed</button>
+                                <ul><p class=question>Contact</p>
+                                    <li>
+                                    <p class=instruction>
+                                        <i class="fas fa-mobile-alt"></i> Call the Radiant team.
+                                    </p>
+                                    </li>
+                                </ul>
+                            </li> 
+                        </ul>
+                    </li>
+                    <li><button class=btn>Results Not Filing into Epic</button>
+                        <ul><p class=question>Were all steps successfully completed in the PACS/PowerScribe?</p>
+                            <p class=instruction>Please confirm the following:
+                                <br>
+                                <input type="checkbox"> Sucessfully verified the exam<br>
+                                <input type="checkbox"> Successfully finalized<br>
+                            </p>
+                        <li>
+                            <button class=btn>Yes - All PACS/PS Steps Completed</button>
+                                <ul><p class=question>Contact</p>
+                                    <li><p class=instruction>
+                                            <i class="fas fa-mobile-alt"></i> Call the Interface team.
+                                        </p>
+                                    </li>
+                                </ul>
+                        </li>
+                        <li>
+                            <button class=btn>No - PACS/PS Steps Could Not Be Completed</button>
+                            <ul><p class=question>Contact</p>
+                                <li>
+                                <p class=instruction>
+                                    <i class="fas fa-mobile-alt"></i> Call the PACS team
+                                </p>
+                                </li>
+                            </ul>
+                        </li> 
+                    </ul>
+                    </li>
+                    <li><button class=btn>PACS/PowerScribe is Not Working</button>
+                        
+                        <ul><p class=question>Contact</p>
+                            <p class=instruction>
+                                <i class="fas fa-mobile-alt"></i> Please page the PACS team 
+                            </p>
+                        </ul>
+                    </li> 
+
+                </ul>
+            </li>
+          
+            </ul>
+            
+        </li>
+          
+        <li><button class=btn>No</button>
+            <ul><li class=instruction>
+                This issue should <b>not</b> be direct to Radiant/PACS. Please contact the appropriate team.
+            </li></ul>
+        </li>
+    </ul>
+</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="js/scripts.js"></script>
+
+</body>
+</html>
